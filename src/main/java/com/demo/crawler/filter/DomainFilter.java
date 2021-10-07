@@ -1,12 +1,13 @@
 package com.demo.crawler.filter;
 
 import com.demo.crawler.transform.DomainExtractor;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.net.MalformedURLException;
 
 public class DomainFilter {
-    private static final Logger LOG = Logger.getLogger(DomainFilter.class);
+    private static final Logger LOG = LogManager.getLogger(DomainFilter.class);
 
     public static boolean isaValidDomain(String url, String parentDomain) {
         try {

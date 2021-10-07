@@ -4,7 +4,8 @@ import com.demo.crawler.commons.CrawlerInfo;
 import com.demo.crawler.commons.URLNode;
 import com.demo.crawler.service.CrawlerService;
 import com.demo.crawler.config.Config;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class HTMLParserService implements CrawlerService {
     private static final String SERVICE_NAME = "Parser";
     private static final Parser<URLNode> htmlParser = new HTMLParser();
     private static final int PARSER_THREAD_COUNT = Integer.parseInt(Config.get(Config.PARSER_SERVICE_THREAD_COUNT));
-    private static final Logger LOG = Logger.getLogger(HTMLParserService.class);
+    private static final Logger LOG = LogManager.getLogger(HTMLParserService.class);
 
     @Override
     public void start() {

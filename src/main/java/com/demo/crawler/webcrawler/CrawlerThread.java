@@ -1,7 +1,8 @@
 package com.demo.crawler.webcrawler;
 
 import com.demo.crawler.commons.URLNode;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Random;
 
@@ -9,7 +10,7 @@ public class CrawlerThread implements Runnable {
     private URLNode urlNode;
     private Crawler<URLNode> webCrawler;
     private static final Random random = new Random();
-    private static final Logger LOG = Logger.getLogger(CrawlerThread.class);
+    private static final Logger LOG = LogManager.getLogger(CrawlerThread.class);
 
     CrawlerThread(URLNode urlNode, Crawler<URLNode> webCrawler) {
         this.urlNode = urlNode;

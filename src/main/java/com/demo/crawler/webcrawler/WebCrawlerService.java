@@ -4,7 +4,8 @@ import com.demo.crawler.commons.CrawlerInfo;
 import com.demo.crawler.commons.URLNode;
 import com.demo.crawler.service.CrawlerService;
 import com.demo.crawler.config.Config;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,7 +20,7 @@ public class WebCrawlerService implements CrawlerService {
     private static final String SERVICE_NAME = "WebCrawlerService";
     private static final Crawler<URLNode> crawler = new WebCrawler();
     private static final int CRAWLER_THREAD_COUNT = Integer.parseInt(Config.get(Config.WEBCRAWLER_SERVICE_THREAD_COUNT));
-    private static final Logger LOG = Logger.getLogger(WebCrawlerService.class);
+    private static final Logger LOG = LogManager.getLogger(WebCrawlerService.class);
 
     @Override
     public void start() {

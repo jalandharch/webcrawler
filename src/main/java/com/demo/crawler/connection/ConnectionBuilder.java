@@ -2,7 +2,8 @@ package com.demo.crawler.connection;
 
 import com.demo.crawler.config.Config;
 import com.demo.crawler.utils.HTTPUtil;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.DataOutputStream;
@@ -15,7 +16,7 @@ import java.util.HashMap;
 public class ConnectionBuilder {
 
     private static final boolean randoemUserAgentEnable = Boolean.parseBoolean(Config.get(Config.USER_AGENT_RANDOM_ENABLED));
-    private static final Logger LOG = Logger.getLogger(Config.class);
+    private static final Logger LOG = LogManager.getLogger(Config.class);
 
     public static HttpURLConnection buildConnection(String url) throws IOException {
 

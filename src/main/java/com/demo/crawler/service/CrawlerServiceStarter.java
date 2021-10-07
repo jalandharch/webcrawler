@@ -5,7 +5,8 @@ import com.demo.crawler.sitemap.SiteMapGenerator;
 import com.demo.crawler.config.Config;
 import com.demo.crawler.parser.HTMLParserService;
 import com.demo.crawler.webcrawler.WebCrawlerService;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +22,7 @@ public class CrawlerServiceStarter {
     private static final SiteMapGenerator siteMapGenerator = new SiteMapGenerator();
     private static final ResponseOutputGenerator responseGenerator = new ResponseOutputGenerator();
     private static int SERVICE_THREAD_COUNT = Integer.parseInt(Config.get(Config.SERVICE_STARTER_THREAD_COUNT));
-    private static final Logger LOG = Logger.getLogger(CrawlerServiceStarter.class);
+    private static final Logger LOG = LogManager.getLogger(CrawlerServiceStarter.class);
 
     public static void startCrawlerServices() {
 

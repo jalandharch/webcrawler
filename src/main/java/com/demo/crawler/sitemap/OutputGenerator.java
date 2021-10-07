@@ -3,7 +3,8 @@ package com.demo.crawler.sitemap;
 import com.demo.crawler.commons.URLNode;
 import com.demo.crawler.config.Config;
 import com.demo.crawler.service.CrawlerService;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -15,7 +16,7 @@ public abstract class OutputGenerator implements CrawlerService {
     private String serviceName;
     private String fileName;
     private static final int CRAWLER_MAX_WAITING_TIME = Integer.parseInt(Config.get(Config.CRAWLER_MAX_WAITING_TIME));
-    private static final Logger LOG = Logger.getLogger(OutputGenerator.class);
+    private static final Logger LOG = LogManager.getLogger(OutputGenerator.class);
 
     public OutputGenerator(ConcurrentLinkedQueue<URLNode> outputQueue, String serviceName, String fileName) {
         this.outputQueue = outputQueue;

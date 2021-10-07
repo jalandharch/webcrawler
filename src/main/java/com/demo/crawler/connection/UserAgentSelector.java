@@ -1,7 +1,8 @@
 package com.demo.crawler.connection;
 
 import com.demo.crawler.config.Config;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -13,7 +14,7 @@ public class UserAgentSelector {
     private static List<String> userAgents = new ArrayList<>();
     private static final String USER_AGENTS_FILE = Config.get(Config.USER_AGENTS_FILE_NAME);
     private static final Random random = new Random();
-    private static final Logger LOG = Logger.getLogger(UserAgentSelector.class);
+    private static final Logger LOG = LogManager.getLogger(UserAgentSelector.class);
 
 
     private UserAgentSelector() {

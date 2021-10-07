@@ -4,7 +4,8 @@ import com.demo.crawler.commons.URLNode;
 import com.demo.crawler.commons.CrawlerInfo;
 import com.demo.crawler.filter.DomainFilter;
 import com.demo.crawler.transform.URLTransformer;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,7 +15,7 @@ import org.jsoup.select.Elements;
 
 public class HTMLParser implements Parser<URLNode> {
     private static final URLTransformer urlTransformer = new URLTransformer();
-    private static final Logger LOG = Logger.getLogger(HTMLParser.class);
+    private static final Logger LOG = LogManager.getLogger(HTMLParser.class);
 
     @Override
     public void parse(URLNode response) {

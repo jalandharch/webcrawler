@@ -1,6 +1,7 @@
 package com.demo.crawler.config;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +9,7 @@ import java.util.Properties;
 
 public class Config {
 
-    private static final Logger LOG = Logger.getLogger(Config.class);
+    private static final Logger LOG = LogManager.getLogger(Config.class);
 
     private static final Properties properties = new Properties();
     private static final String PROPERTIES_FILE = "config.properties";

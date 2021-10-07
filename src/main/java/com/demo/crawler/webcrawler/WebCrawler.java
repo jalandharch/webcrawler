@@ -6,14 +6,15 @@ import com.demo.crawler.commons.CrawlerInfo;
 import com.demo.crawler.filter.DomainFilter;
 import com.demo.crawler.transform.URLTransformer;
 import com.demo.crawler.utils.HTTPUtil;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 
 public class WebCrawler implements Crawler<URLNode> {
     private static final URLTransformer urlTransformer = new URLTransformer();
-    private static final Logger LOG = Logger.getLogger(WebCrawler.class);
+    private static final Logger LOG = LogManager.getLogger(WebCrawler.class);
 
     @Override
     public void crawl(URLNode urlNode) {
